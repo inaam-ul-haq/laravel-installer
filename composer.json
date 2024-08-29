@@ -1,0 +1,22 @@
+{
+    "name": "inaam-ul-haq/installer",
+    "description": "Laravel web installer",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Inaam ul haq",
+            "email": "waleedhaq339@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inaam\\Installer\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
