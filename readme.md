@@ -1,7 +1,7 @@
 # Laravel Web Installer
 
 [![Packagist License](https://poser.pugx.org/froiden/laravel-installer/license)]()
-[![Total Downloads](https://poser.pugx.org/froiden/laravel-installer/d/total)](https://packagist.org/packages/froiden/laravel-installer)
+[![Total Downloads](https://poser.pugx.org/inaam-ul-haq/installer/d/total)](https://packagist.org/packages/inaam-ul-haq/installer)
 
 Laravel Web installer checks for the following things and installs the application in one go.
 
@@ -15,29 +15,15 @@ Laravel Web installer checks for the following things and installs the applicati
 You need to have `.env` to the root
 
 
-
 # Installation
-
-1)  If you are running **Laravel 5 or above** :
-
+If you are running **Laravel 11 or above** :
 ```
-composer require froiden/laravel-installer:1.9.0
-```
-OR add this line to `composer.json`
-
-```
-"require": {
-    "froiden/laravel-installer": "1.9.0"
-}
-```
-2)  If you are running **Laravel 11 or above** :
-```
-composer require froiden/laravel-installer:11.0.0
+composer require inaam-ul-haq/installer:@dev
 ```
 OR add this line to `composer.json`
 ```
 "require": {
-    "froiden/laravel-installer": "11.0.0"
+    "inaam-ul-haq/installer": "dev"
 }
 ```
 
