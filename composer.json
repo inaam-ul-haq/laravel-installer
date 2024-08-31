@@ -2,21 +2,33 @@
     "name": "inaam-ul-haq/installer",
     "description": "Laravel web installer",
     "license": "MIT",
-    "type": "library",
+    "version": "1.1",
     "authors": [
         {
             "name": "Inaam ul haq",
             "email": "waleedhaq339@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.0.0"
+    },
     "autoload": {
         "psr-4": {
             "Inaam\\Installer\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "src/Helpers/functions.php"
         ]
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inaam\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
 }
