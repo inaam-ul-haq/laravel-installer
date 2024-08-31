@@ -51,7 +51,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ```php
 	'providers' => [
-	    Inaam\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider::class,
+	    Inaam\\Installer\\Providers\\LaravelInstallerServiceProvider::class,
 	];
 ```
 
