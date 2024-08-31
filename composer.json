@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Inaam\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
+                "Inaam\\Installer\\Providers\\LaravelInstallerServiceProvider"
             ]
         }
     },
