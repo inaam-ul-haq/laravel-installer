@@ -1,6 +1,12 @@
 {
     "name": "inaam-ul-haq/installer",
     "description": "Laravel web installer",
+    "keywords": [
+        "laravel",
+        "installer",
+        "laravel installer",
+        "web installer"
+    ],
     "license": "MIT",
     "version": "1.1",
     "authors": [
@@ -30,5 +36,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
