@@ -8,8 +8,6 @@ use Inaam\Installer\Repositories\ApplicationStatusRepositoryInterface;
 
 class LicenseKeyRule implements ValidationRule
 {
-
-
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         $licenseRepository = app(ApplicationStatusRepositoryInterface::class);
