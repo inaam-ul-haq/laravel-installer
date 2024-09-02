@@ -1,7 +1,8 @@
-# Laravel Web Installer | A Web Installer [Package](https://packagist.org/packages/inaam-ul-haq/installer)
+# Laravel Web Installer | A Web Installer [Package](https://packagist.org/packages/rachidlaasri/laravel-installer)
 
-[![Packagist License](https://poser.pugx.org/inaam-ul-haq/installer/license)]()
-[![Total Downloads](https://poser.pugx.org/inaam-ul-haq/installer/d/total)](https://packagist.org/packages/inaam-ul-haq/installer)
+[![Total Downloads](https://poser.pugx.org/rachidlaasri/laravel-installer/d/total.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
+[![Latest Stable Version](https://poser.pugx.org/rachidlaasri/laravel-installer/v/stable.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
+[![License](https://poser.pugx.org/rachidlaasri/laravel-installer/license.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
 
 - [About](#about)
 - [Requirements](#requirements)
@@ -27,19 +28,17 @@ The current features are :
 - Migrate The Database.
 - Seed The Tables.
 
-# Installation
-If you are running **Laravel 11 or above** :
-```
-composer require inaam-ul-haq/installer:@dev
-```
-OR add this line to `composer.json`
-```
-"require": {
-    "inaam-ul-haq/installer": "dev"
-}
-```
+## Requirements
 
-After updating the composer, add the ServiceProvider to the providers array in `config/app.php`.
+* [Laravel 5.1, 5.2, 5.3, 5.4, or 5.5+](https://laravel.com/docs/installation)
+
+## Installation
+
+1. From your projects root folder in terminal run:
+
+```bash
+    composer require rachidlaasri/laravel-installer
+```
 
 2. Register the package
 
@@ -51,7 +50,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ```php
 	'providers' => [
-	    Inaam\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider::class,
+	    RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 	];
 ```
 
@@ -87,8 +86,8 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## Contributing
 
-* If you have any suggestions please let me know : https://github.com/inaam-ul-haq/laravel-installer/pulls.
-* Please help us provide more languages for this awesome package please send a pull request https://github.com/inaam-ul-haq/laravel-installer/pulls.
+* If you have any suggestions please let me know : https://github.com/RachidLaasri/LaravelInstaller/pulls.
+* Please help us provide more languages for this awesome package please send a pull request https://github.com/RachidLaasri/LaravelInstaller/pulls.
 
 ## Help
 

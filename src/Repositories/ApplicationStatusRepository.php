@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ApplicationStatusRepository implements ApplicationStatusRepositoryInterface
 {
-    public string $baseLicenseUrl = 'https://portal.liquid-themes.com/api/license';
+    public string $baseLicenseUrl = '#';
 
     public function financePage(): string
     {
@@ -30,7 +30,7 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
     {
         $portal = $this->portal();
 
-        return data_get($portal, 'liquid_license_type');
+        return data_get($portal, 'license_type');
     }
 
     public function check(string $licenseKey, bool $installed = false): bool
@@ -41,8 +41,8 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
             $portal = $this->portal() ?: [];
 
             $data = array_merge($portal, [
-                'liquid_license_type' => $response->json('licenseType'),
-                'liquid_license_domain_key' => $licenseKey,
+                'license_type' => $response->json('licenseType'),
+                'license_domain_key' => $licenseKey,
                 'installed' => $installed,
             ]);
 
@@ -91,22 +91,22 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
 
         if (
             Schema::hasTable('settings_two')
-            && Schema::hasColumn('settings_two', 'liquid_license_type')
-            && Schema::hasColumn('settings_two', 'liquid_license_domain_key')
+            && Schema::hasColumn('settings_two', 'license_type')
+            && Schema::hasColumn('settings_two', 'license_domain_key')
         ) {
             SettingTwo::query()->first()->update([
-                'liquid_license_type' => $data['liquid_license_type'],
-                'liquid_license_domain_key' => $data['liquid_license_domain_key'],
+                'license_type' => $data['license_type'],
+                'license_domain_key' => $data['license_domain_key'],
             ]);
         }
     }
 
     public function generate(Request $request): void
     {
-        if ($request->exists(['liquid_license_status', 'liquid_license_domain_key', 'liquid_license_domain_key'])) {
+        if ($request->exists(['license_status', 'license_domain_key', 'license_domain_key'])) {
             $data = [
-                'liquid_license_key' => $request->input('liquid_license_key'), // 'liquid_license_key' => $request->input('liquid_license_key'),
-                'liquid_license_domain_key' => $request->input('liquid_license_domain_key'),
+                'license_key' => $request->input('license_key'),
+                'license_domain_key' => $request->input('license_domain_key'),
             ];
 
             $this->save($data);
@@ -122,9 +122,9 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
             return redirect()->route('LaravelInstaller::license');
         }
 
-        $liquid_license_domain_key = data_get($portal, 'liquid_license_domain_key');
+        $license_domain_key = data_get($portal, 'license_domain_key');
 
-        if (! $liquid_license_domain_key) {
+        if (! $license_domain_key) {
             return redirect()->route('LaravelInstaller::license');
         }
 
@@ -142,18 +142,18 @@ class ApplicationStatusRepository implements ApplicationStatusRepositoryInterfac
         $portal = $this->portal();
 
         if ($portal) {
-            $liquid_license_domain_key = data_get($portal, 'liquid_license_domain_key');
-            $request_liquid_license_domain_key = $request->get('key');
+            $license_domain_key = data_get($portal, 'license_domain_key');
+            $request_license_domain_key = $request->get('key');
             $app_key = $request->get('app_key');
 
-            if ($liquid_license_domain_key == $request_liquid_license_domain_key && $request->get('isDisabled')) {
+            if ($license_domain_key == $request_license_domain_key && $request->get('isDisabled')) {
 
                 $portal['blocked'] = true;
 
                 $this->save($portal);
 
                 return response()->noContent();
-            } elseif ($liquid_license_domain_key == $request_liquid_license_domain_key) {
+            } elseif ($license_domain_key == $request_license_domain_key) {
                 $portal['blocked'] = false;
 
                 $this->save($portal);
