@@ -58,7 +58,7 @@ class DatabaseManager
                 $adminUser->email = 'admin@admin.com';
                 $adminUser->phone = '5555555555';
                 $adminUser->type = 'admin';
-                $adminUser->password = '$2y$10$XptdAOeFTxl7Yx2KmyfEluWY9Im6wpMIHoJ9V5yB96DgQgTafzzs6';
+                $adminUser->password = '$2y$10$XptdAOeFTxl7Yx2KmyfEluWY9Im6wpMIHoJ9V5yB96DgQgTafzzs6'; // admin123
                 $adminUser->status = 1;
                 $adminUser->remaining_words = 3000000;
                 $adminUser->remaining_images = 3000000;
