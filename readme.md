@@ -92,7 +92,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## Help
 
-* Cannot figure it out? Need more help? Here is a video tutorial: [Laravel Installer by Devdojo](https://www.youtube.com/watch?v=Jput5doFYLg)
+* Cannot figure it out? Need more help? Here is a video tutorial: [Laravel Installer by Techzhubb](https://www.youtube.com/@Techzhub)
 
 ## Screenshots
 
